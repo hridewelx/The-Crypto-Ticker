@@ -1,40 +1,57 @@
-# The Crypto Ticker
+# GitHub Profile Explorer
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
-![Redux](https://img.shields.io/badge/Redux-593D88?logo=redux&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 
-A modern web app for tracking real-time cryptocurrency prices. Featuring a sleek UI, live updates, and a responsive design, The Crypto Ticker makes monitoring the crypto market easy and visually appealing.
+A modern React app for searching and exploring GitHub user profiles. Browse multiple users, view individual profiles, and get live data directly from the GitHub API.
 
 ---
 
 ## Features
 
-- **Live Market Data:** Track top cryptocurrencies with real-time price updates.
-- **Variable Coin Count:** Easily change the number of coins displayed by editing the relevant value in the code.
+- **Browse Multiple Profiles:** Fetch and display a list of GitHub users.
+- **Search Individual Profiles:** Look up any GitHub user by username.
 - **Responsive Design:** Optimized for desktop and mobile devices.
-- **Glassmorphism Cards:** Stylish, modern UI with gradient backgrounds and glass-like coin cards.
-- **Loading & Error States:** Smooth pulse animation for loading and clear error feedback.
-- **Redux State Management:** Centralized, predictable state for all coin data.
+- **Modern UI:** Clean, user-friendly interface.
+- **Loading & Error States:** Clear feedback for loading and errors.
 
 ---
 
 ## Project Showcase
 
-Here are some screenshots of The Crypto Ticker app:
+Here are some screenshots of GitHub Profile Explorer:
 
-### Main Dashboard
-<img width="1903" height="933" alt="image" src="https://github.com/user-attachments/assets/cea60e4f-3159-448c-b096-85342ee69c9a" />
+### Multiple User Mode 
+<img width="1899" height="933" alt="image" src="https://github.com/user-attachments/assets/d537cafa-3f63-4040-b8fb-3f602a321bba" />
+
+### Individual User Mode
+<img width="1899" height="933" alt="image" src="https://github.com/user-attachments/assets/a563ada3-cf1d-45ec-b436-b1bc66d862f6" />
+
+---
+
+## Public API
+
+This project uses the free [GitHub Users API](https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28):
+
+- List users:  
+  `https://api.github.com/users?per_page=10`
+- List users (custom count):  
+  `https://api.github.com/users?per_page=${count}`
+- Individual user:  
+  `https://api.github.com/users/{username}`
+- Paginated users:  
+  `https://api.github.com/users?since=6000&per_page=20`
+
+---
 
 ## Tech Stack
 
 - **React** — For building interactive UIs.
-- **Redux** — For managing live coin data state.
 - **JavaScript (ES6+)** — Core programming language.
-- **HTML5 & CSS3** — Structure and styling, including gradients and glassmorphism.
+- **HTML5 & CSS3** — Structure and styling.
 
 ---
 
@@ -43,18 +60,19 @@ Here are some screenshots of The Crypto Ticker app:
 ```
 .
 ├── Component
-│   ├── CardSlicer.jsx
-│   ├── CreateCryptoCoin.jsx
-│   ├── CryptoCoin.jsx
-│   └── Store.jsx
+│   ├── Body.jsx
+│   ├── Header.jsx
+│   └── useFetchProfiles.jsx
+├── index.html
 ├── package.json
 ├── package-lock.json
-├── projectLogic.md
+├── readme.md
 └── src
-    ├── app.jsx
-    ├── index.html
+    ├── script.jsx
     └── styles.css
 ```
+
+---
 
 ## Getting Started
 
@@ -71,11 +89,11 @@ To get a local copy up and running, follow these steps:
 
 1.  Clone the repository:
     ```sh
-    git clone https://github.com/your_username/the-crypto-ticker.git
+    git clone https://github.com/your_username/github-profile-explorer.git
     ```
 2.  Navigate to the project directory:
     ```sh
-    cd the-crypto-ticker
+    cd github-profile-explorer
     ```
 3.  Install dependencies:
     ```sh
@@ -102,7 +120,7 @@ Contributions are welcome!
 
 ---
 
-**Made with 🧡 & chaos** – because perfect apps are boring!
+**Made with ❤️ for open source!**
 
 ---
 
@@ -122,4 +140,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
   <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" style="vertical-align: middle;" /> 
 </a>
 
-Feel free to reach out for collaboration or queries.
+Feel free to reach out for
